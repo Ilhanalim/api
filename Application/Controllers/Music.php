@@ -20,8 +20,6 @@ class ControllersMusic extends Controller {
         $file = PATH . "api/resource/images/" .  $param['cover'] . "";
 
         if (file_get_contents($file)) {
-            ob_clean();
-            flush();
             readfile($file);
         } else {
             $this->response->sendStatus(404);
@@ -38,8 +36,6 @@ class ControllersMusic extends Controller {
         $file = PATH . "api/resource/audio/" .  $param['source'] . "";
 
         if (file_get_contents($file)) {
-            ob_clean();
-            flush();
             readfile($file);
         } else {
             $this->response->sendStatus(404);
